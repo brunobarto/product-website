@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-[#c0c0c0];
+}
+
+body {
+  @apply font-mac text-xs;
+}
