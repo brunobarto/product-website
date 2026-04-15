@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chroma Console Multi‑FX + Synth</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="pedal">
+
+  <div class="pedal-header">
+    <div class="pedal-title">Chroma Console Multi‑Effector</div>
+    <div class="pedal-subtitle">Hybrid Synth & FX</div>
+  </div>
+
+  <!-- TOP ROW -->
+  <div class="top-row">
+    <div class="control-block">
+      <div class="control-label-main">Tilt</div>
+      <div class="control-label-sub">Sensitivity</div>
+      <div class="knob-row">
+        <div class="knob" data-knob="tilt"><div class="knob-indicator"></div></div>
+        <div class="knob-value">50%</div>
+      </div>
+      <div class="knob-label">Amount</div>
+    </div>
+
+    <div class="control-block">
+      <div class="control-label-main">Rate</div>
+      <div class="control-label-sub">Drift</div>
+      <div class="knob-row">
+        <div class="knob" data-knob="rate"><div class="knob-indicator"></div></div>
+        <div class="knob-value">50%</div>
+      </div>
+      <div class="knob-label">Amount</div>
+    </div>
+
+    <div class="control-block">
+      <div class="control-label-main">Time</div>
+      <div class="control-label-sub">Drift</div>
+      <div class="knob-row">
+        <div class="knob" data-knob="time"><div class="knob-indicator"></div></div>
+        <div class="knob-value">50%</div>
+      </div>
+      <div class="knob-label">Amount</div>
+    </div>
+
+    <div class="control-block">
+      <div class="control-label-main">Mix</div>
+      <div class="control-label-sub">Output Level</div>
+      <div class="knob-row">
+        <div class="knob" data-knob="mix"><div class="knob-indicator"></div></div>
+        <div class="knob-value">50%</div>
+      </div>
+      <div class="knob-label">Amount</div>
+    </div>
+  </div>
+
+  <!-- MODE GRID -->
+  <div class="bottom-grid">
+
+    <div class="mode-block" data-mode-group="character">
+      <div class="mode-header"><div class="mode-title">Character</div><div class="mode-color character"></div></div>
+      <div class="mode-list">
+        <div class="mode-item active"><div class="mode-led"></div>Drive</div>
+        <div class="mode-item"><div class="mode-led"></div>Sweeten</div>
+        <div class="mode-item"><div class="mode-led"></div>Fuzz</div>
+        <div class="mode-item"><div class="mode-led"></div>Hollow</div>
+        <div class="mode-item"><div class="mode-led"></div>Swirl</div>
+      </div>
+    </div>
+
+    <div class="mode-block" data-mode-group="movement">
+      <div class="mode-header"><div class="mode-title">Movement</div><div class="mode-color movement"></div></div>
+      <div class="mode-list">
+        <div class="mode-item active"><div class="mode-led"></div>Doubler</div>
+        <div class="mode-item"><div class="mode-led"></div>Vibrato</div>
+        <div class="mode-item"><div class="mode-led"></div>Flanger</div>
+        <div class="mode-item"><div class="mode-led"></div>Phaser</div>
+        <div class="mode-item"><div class="mode-led"></div>Tremolo</div>
+      </div>
+    </div>
+
+    <div class="mode-block" data-mode-group="diffusion">
+      <div class="mode-header"><div class="mode-title">Diffusion</div><div class="mode-color diffusion"></div></div>
+      <div class="mode-list">
+        <div class="mode-item active"><div class="mode-led"></div>Cascade</div>
+        <div class="mode-item"><div class="mode-led"></div>Reels</div>
+        <div class="mode-item"><div class="mode-led"></div>Clouds</div>
+        <div class="mode-item"><div class="mode-led"></div>Reverse</div>
+      </div>
+    </div>
+
+    <div class="mode-block" data-mode-group="texture">
+      <div class="mode-header"><div class="mode-title">Texture</div><div class="mode-color texture"></div></div>
+      <div class="mode-list">
+        <div class="mode-item active"><div class="mode-led"></div>Studio</div>
+        <div class="mode-item"><div class="mode-led"></div>Cassette</div>
+        <div class="mode-item"><div class="mode-led"></div>Broken</div>
+        <div class="mode-item"><div class="mode-led"></div>Intercom</div>
+      </div>
+    </div>
+
+    <div class="mode-block" data-mode-group="synth">
+      <div class="mode-header"><div class="mode-title">Synth</div><div class="mode-color movement"></div></div>
+      <div class="mode-list">
+        <div class="mode-item active"><div class="mode-led"></div>Oscillator</div>
+        <div class="mode-item"><div class="mode-led"></div>Filter</div>
+        <div class="mode-item"><div class="mode-led"></div>Envelope</div>
+        <div class="mode-item"><div class="mode-led"></div>LFO</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SYNTH PANEL -->
+  <div class="synth-panel">
+    <div class="control-block">
+      <div class="control-label-main">Osc</div>
+      <div class="control-label-sub">Wave</div>
+      <select id="osc-wave" class="select">
+        <option value="sine">Sine</option>
+        <option value="square">Square</option>
+        <option value="sawtooth">Saw</option>
+        <option value="triangle">Triangle</option>
+      </select>
+    </div>
+
+    <div class="control-block">
+      <div class="control-label-main">Filter</div>
+      <div class="control-label-sub">Cutoff</div>
+      <div class="knob" data-synth-knob="cutoff"><div class="knob-indicator"></div></div>
+    </div>
+
+    <div class="control-block">
+      <div class="control-label-main">Env</div>
+      <div class="control-label-sub">Attack</div>
+      <div class="knob" data-synth-knob="attack"><div class="knob-indicator"></div></div>
+    </div>
+
+    <div class="control-block">
+      <div class="control-label-main">LFO</div>
+      <div class="control-label-sub">Rate</div>
+      <div class="knob" data-synth-knob="lfoRate"><div class="knob-indicator"></div></div>
+    </div>
+  </div>
+
+  <!-- WAVEFORM -->
+  <div class="visualizer-wrapper">
+    <div class="visualizer-header">
+      <div class="visualizer-title">Waveform</div>
+      <div class="visualizer-sub">Synth Output</div>
+    </div>
+    <canvas id="waveform"></canvas>
+  </div>
+
+  <!-- FOOTSWITCHES -->
+  <div class="foot-row">
+    <div class="foot-left">
+      <div class="foot-label">Tap / Trigger</div>
+      <div class="foot-switch" data-foot="tap"></div>
+    </div>
+
+    <div class="brand-area">
+      <div class="brand-logo">
+        <div class="logo-bar"></div><div class="logo-bar"></div><div class="logo-bar"></div><div class="logo-bar"></div>
+      </div>
+      <div class="brand-name">Chroma</div>
+      <div class="preset-indicator" id="preset-indicator">Preset: A01</div>
+    </div>
+
+    <div class="foot-right">
+      <div class="foot-label">Bypass / Presets</div>
+      <div class="foot-switch" data-foot="bypass"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
